@@ -57,7 +57,7 @@ class Excel_import extends CI_Controller
    $data = array();  
    foreach($fetch_data as $row)  
    {  
-        $sub_array = array();  
+        $sub_array = array();
         $sub_array[] = $row->full_name;  
         $sub_array[] = $row->phone_number;  
         $sub_array[] = $row->email;  

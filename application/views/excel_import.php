@@ -86,9 +86,6 @@ $(function(){
        $('#progress').fadeOut(2000)
     //    $("#loading").hide();
        $('#example').DataTable().ajax.reload()
-   // $('#file').val('');
-   // load_data();
-    // alert(data);
    },
 
   })
@@ -97,7 +94,8 @@ $(function(){
  $('#example').DataTable( {
         processing: true,
         serverSide: true,
-        dom: '<lf<tB>ip>',
+        dom: '<lf<B><t>ip>',
+        lengthMenu: [[25, 50,100, -1], [25,50, 100, "All"]],
         ajax:{  
                 url:"<?php echo base_url(); ?>excel_import/fetch_employee",  
                 type:"POST"  
@@ -111,13 +109,16 @@ $(function(){
 
            buttons: [
             { 
-                extend: 'csv',
+                extend: 'csvHtml5',
                 className: 'btn btn-info',
                 filename: 'employee',
+                title: '',
              },
-            { extend: 'excel', 
+            { extend: 'excelHtml5', 
               className: 'btn btn-success',
               filename: 'employee',
+              title: '',
+            //   autoFilter: true,
              }
         ]
     } );
