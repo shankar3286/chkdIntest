@@ -75,6 +75,7 @@ $(function(){
     },
    success:function(data){
        if(data){
+        $('#import_form').trigger("reset"); 
         toastr.success('successfully inserted')
        }else {
         toastr.error('somethink went to wrong')
